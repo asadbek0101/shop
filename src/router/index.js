@@ -12,6 +12,8 @@ import AddPage from "@/views/Admin/Add/AddPage";
 import CurierPage from "@/views/Admin/Curier/CurierPage";
 import InfoPage from "@/views/Admin/Info/InfoPage";
 import SettingPage from "@/views/Admin/Settings/SettingPage";
+import ProfilePage from "@/views/Client/Profile/ProfilePage";
+import NotFoundPage from "@/views/NotFound/NotFoundPage";
 
 
 Vue.use(VueRouter)
@@ -43,6 +45,11 @@ const routes = [
         name:"Show",
         component: ShowPage
       },
+      {
+        path:"/client/profile",
+        name:"Profile",
+        component: ProfilePage
+      }
 
     ]
   },
@@ -82,6 +89,11 @@ const routes = [
       }
     ]
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFoundPage,
+  }
 
 ]
 

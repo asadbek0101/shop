@@ -4,8 +4,8 @@
 >
   <i v-if="icon" :class="icon"></i>
   <img v-if="src" :src="src" alt="" :style="{height: imgHeight}" >
-  <h1 v-if="title" >{{title}}</h1>
-  <p v-if="text">{{text}}</p>
+  <h1 v-if="title" >{{title}} <span style="font-weight: normal"> {{name}}</span></h1>
+  <p v-if="text" style="font-family: 'Roboto', sans-serif"> <strong>{{textTitle}}</strong> {{text}}</p>
 <slot></slot>
 </div>
 </template>
@@ -14,6 +14,7 @@
 export default {
   name: "AppCard",
   props:{
+    name:String,
     title:String,
     text:String,
     src:String,
@@ -21,7 +22,8 @@ export default {
     bgColor: String,
     width: String,
     imgHeight:String,
-    icon:String
+    icon:String,
+    textTitle:String
   }
 }
 </script>
@@ -40,9 +42,8 @@ export default {
     font-size: 40px;
   }
   h1{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
   }
   img{
     width: 100%;

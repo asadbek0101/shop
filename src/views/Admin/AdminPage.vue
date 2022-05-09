@@ -2,12 +2,13 @@
     <div id="button">
       <app-saidbar v-if="forSaidbar" :forDisplay = forSaidbar width="20%" >
         <h1>Saidbar</h1>
-      </app-saidbar>
+        </app-saidbar>
       <app-main :forDisplay = forSaidbar >
         <app-header width="98%">
           <button @click="forSaidbar = !forSaidbar" style="border: none; background-color: transparent; color: white; cursor: pointer; font-size: 24px; margin-left: 20px">
             <i class="fa-solid fa-bars"></i>
           </button>
+          <app-router to="/"> Exit</app-router>
         </app-header>
         <router-view/>
       </app-main>
@@ -19,9 +20,10 @@
 import AppSaidbar from "@/components/Saidbar/AppSaidbar";
 import AppMain from "@/components/Main/AppMain";
 import AppHeader from "@/components/Header/AppHeader";
+import AppRouter from "@/components/Router/AppRouter";
 export default {
   name: "AdminPage",
-  components: {AppHeader, AppMain, AppSaidbar},
+  components: {AppRouter, AppHeader, AppMain, AppSaidbar},
   data(){
     return {
       forSaidbar: false

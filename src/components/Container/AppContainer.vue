@@ -14,5 +14,10 @@ export default {
 .container{
   max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 </style>

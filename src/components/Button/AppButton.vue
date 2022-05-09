@@ -1,7 +1,7 @@
 <template>
 <button
     @click="$emit('click')"
-  :style="{ width: widht,backgroundColor: bgColor, color: color,}"
+  :style="{ width: widht,backgroundColor: bgColor, color: color, fontSize:fs}"
   >
   <slot>
   </slot>
@@ -14,7 +14,8 @@ export default {
   props:{
     bgColor : String,
     color: String,
-    widht: String
+    widht: String,
+    fs:String
   },
 
 }
@@ -23,11 +24,12 @@ export default {
 <style scoped lang="scss">
   button{
     padding: 10px 24px;
-    font-size: 20px;
+    font-size: 14px;
     background: #2c3e50;
     font-family: sans-serif;
     border-radius: 4px;
     color: white;
     cursor: pointer;
+    border: none;
   }
 </style>

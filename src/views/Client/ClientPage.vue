@@ -1,9 +1,8 @@
 <template>
   <div>
     <app-header justify-content="flex-end">
-      <div style="display: flex">
-        <app-router margin-left="0" padding="4px 20px" to="/client/home">Home</app-router>
-        <app-router margin-left="0" padding="4px 20px" to="/client/korzinka">Korzinka</app-router>
+      <div style="display: flex;">
+        <app-router margin-left="0" padding="4px 20px" v-for="(link, index) in links" :key="index" :to="link.path">{{link.title}}</app-router>
       </div>
     </app-header>
     <app-main>
@@ -21,7 +20,12 @@ import AppMain from "@/components/Main/AppMain";
 
 export default {
   name: "ClientPage",
-  components: {AppMain, AppFooter, AppRouter, AppHeader}
+  components: {AppMain, AppFooter, AppRouter, AppHeader},
+  computed:{
+    links(){
+      return this.$store.state.links
+    }
+  }
 }
 </script>
 

@@ -35,7 +35,7 @@ export default {
         },
         {
           to:"/admin/info",
-          title:"Info",
+          title:"Order",
           iconClas:"fa-solid fa-receipt"
         },
         {
